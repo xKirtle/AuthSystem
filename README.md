@@ -13,3 +13,5 @@ Feel free to tweak this to fit your needs by either adding a specific channel to
 
 You can contact me on Discord (Kirtle#0498) if you need any help.
 Note: It probably requires DBM Beta and Mods. (Select the beta update on steam)
+
+[Screenshot](https://i.imgur.com/59uICWT.png "Screenshot of the bot")

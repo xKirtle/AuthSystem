@@ -1,0 +1,70 @@
+{
+  "name": "authSave",
+  "permissions": "ADMINISTRATOR",
+  "restriction": "1",
+  "_id": "LKLyl",
+  "actions": [
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "Your WEBAPI URL",
+      "path": "",
+      "storage": "1",
+      "varName": "storedJson",
+      "debugMode": "1",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "storedJson",
+      "path": "$.auth",
+      "storage": "1",
+      "varName": "parsedJson",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "storage": "1",
+      "varName": "parsedJson",
+      "conversion": "2",
+      "storage2": "1",
+      "varName2": "parsedJsonString",
+      "name": "Convert Variable"
+    },
+    {
+      "comment": "Reads, parses and converts the online data into a string",
+      "color": "#00ff00",
+      "name": "Comment"
+    },
+    {
+      "input": "",
+      "format": ".json",
+      "filename": "keys",
+      "filepath": "./resources",
+      "filetask": "0",
+      "name": "File Control"
+    },
+    {
+      "input": "${tempVars(\"parsedJsonString\")}",
+      "format": ".json",
+      "filename": "keys",
+      "filepath": "./resources",
+      "filetask": "1",
+      "name": "File Control"
+    },
+    {
+      "comment": "Saves the data string on a local file",
+      "color": "#00ff00",
+      "name": "Comment"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "List updated.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}

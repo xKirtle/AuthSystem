@@ -1,0 +1,86 @@
+{
+  "name": "authDisplay",
+  "permissions": "ADMINISTRATOR",
+  "restriction": "1",
+  "_id": "nEkyi",
+  "actions": [
+    {
+      "filename": "./resources/keys.json",
+      "storage": "1",
+      "varName2": "readKeys",
+      "name": "Read File"
+    },
+    {
+      "storage": "1",
+      "varName": "readKeys",
+      "conversion": "2",
+      "storage2": "1",
+      "varName2": "readKeysString",
+      "name": "Convert Variable"
+    },
+    {
+      "comment": "Reads the local data and converts it into a string",
+      "color": "#00ff00",
+      "name": "Comment"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "author",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "author",
+      "info": "16",
+      "storage": "1",
+      "varName2": "authorAvatar",
+      "name": "Store Member Info"
+    },
+    {
+      "comment": "Stores the author name/avatar",
+      "color": "#00ff00",
+      "name": "Comment"
+    },
+    {
+      "title": "**Active Keys**",
+      "author": "",
+      "color": "#232323",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embedcreate",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embedcreate",
+      "message": "${tempVars(\"readKeysString\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embedcreate",
+      "message": "Requested by ${tempVars(\"author\")}",
+      "footerIcon": "${tempVars(\"authorAvatar\")}",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embedcreate",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "comment": "Sends an embed message with the keys",
+      "color": "#00ff00",
+      "name": "Comment"
+    }
+  ]
+}
